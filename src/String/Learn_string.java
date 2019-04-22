@@ -1,0 +1,62 @@
+package String;
+
+public class Learn_string {
+	
+	/*
+	 * String brief
+	 */
+	
+	public static void main(String[] args) {
+		
+		/*
+		 * 1. COMPARE
+		 */
+		
+		// initialize
+        String s1 = "Hello World";
+        System.out.println("s1 is \"" + s1 + "\"");
+        String s2 = s1;
+        System.out.println("s2 is another reference to s1.");
+        String s3 = new String(s1);
+        System.out.println("s3 is a copy of s1.");
+        // compare using '=='
+        System.out.println("Compared by '==':");
+        // true since string is immutable and s1 is binded to "Hello World"
+        System.out.println("s1 and \"Hello World\": " + (s1 == "Hello World"));
+        // true since s1 and s2 is the reference of the same object
+        System.out.println("s1 and s2: " + (s1 == s2));
+        // false since s3 is refered to another new object
+        System.out.println("s1 and s3: " + (s1 == s3));
+        // compare using 'equals'
+        System.out.println("Compared by 'equals':");
+        System.out.println("s1 and \"Hello World\": " + s1.equals("Hello World"));
+        System.out.println("s1 and s2: " + s1.equals(s2));
+        System.out.println("s1 and s3: " + s1.equals(s3));
+        // compare using 'compareTo'
+        System.out.println("Compared by 'compareTo':");
+        System.out.println("s1 and \"Hello World\": " + (s1.compareTo("Hello World") == 0));
+        System.out.println("s1 and s2: " + (s1.compareTo(s2) == 0));
+        System.out.println("s1 and s3: " + (s1.compareTo(s3) == 0));
+        
+        /*
+		 * 2. String is changeable in Java ? No, the string in java is unchangeable
+		 */
+//        String s4 = "Hello World";
+//        s4[5] = ','; // will be an error;The type of the exprsssion must be array, but it's string
+        
+        /*
+		 * 3. Extra operation in string
+		 */
+        String s5 = "Hello World";
+        // 1. concatenate
+        s5 += "!";
+        System.out.println(s5);
+        // 2. find
+        System.out.println("The position of first 'o' is: " + s5.indexOf('o'));
+        System.out.println("The position of last 'o' is: " + s5.lastIndexOf('o'));
+        // 3. get substring
+        System.out.println(s5.substring(6, 11));
+        
+	}
+
+}
